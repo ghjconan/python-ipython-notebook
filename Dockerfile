@@ -4,7 +4,7 @@ MAINTAINER Huajun Gu <contact@guhuajun.com>
 RUN mkdir -p /app
 WORKDIR /app
 
-# Make sure python packages are downloaded from Aliyun mirroring.
+# Make sure that python packages should be downloaded from Aliyun mirroring site.
 RUN mkdir -p ~/.pip
 ADD pip.conf ~/.pip/pip.conf
 
