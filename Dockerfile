@@ -1,5 +1,14 @@
 FROM daocloud.io/python:2.7
-MAINTAINER Captain Dao <support@daocloud.io>
+MAINTAINER Huajun Gu <contact@guhuajun.com>
+
+# Make sure python packages are downloaded from Aliyun mirroring.
+
+RUN mkdir ~/.pip
+RUN echo "[global]" > ~/.pip/pip.conf
+RUN echo "index-url = http://mirrors.aliyun.com/pypi/simple/" > ~/.pip/pip.conf
+RUN echo "" > ~/.pip/pip.conf
+RUN echo "[install]" > ~/.pip/pip.conf
+RUN echo "trusted-host=mirrors.aliyun.com" > ~/.pip/pip.conf
 
 RUN mkdir -p /app
 WORKDIR /app
