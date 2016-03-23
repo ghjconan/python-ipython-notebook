@@ -3,7 +3,8 @@ MAINTAINER Huajun Gu <contact@guhuajun.com>
 
 # Make sure python packages are downloaded from Aliyun mirroring.
 
-RUN mkdir ~/.pip
+RUN mkdir -p ~/.pip
+RUN touch ~/.pip/pip.conf
 RUN echo "[global]" > ~/.pip/pip.conf
 RUN echo "index-url = http://mirrors.aliyun.com/pypi/simple/" > ~/.pip/pip.conf
 RUN echo "" > ~/.pip/pip.conf
